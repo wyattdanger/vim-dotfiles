@@ -1,4 +1,4 @@
-"PATHOGEN YO
+
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 "
@@ -88,8 +88,8 @@ if has("gui_running")
   set showtabline=0
   set t_Co=256
   set background=dark
-  colorscheme molokai2
-  " colorscheme solarized
+  " colorscheme molokai2
+  colorscheme solarized
 
   set nu
 else
@@ -272,9 +272,6 @@ autocmd FileType php noremap <C-G> :!/Applications/XAMPP/xamppfiles/bin/php -l %
 
 "Quickly open a buffer for scripbble
 map <leader>q :e ~/buffer<cr>
-
-" Load autoclose HTML Tags
-:au Filetype php,html,xml,xsl source ~/.vim/bundle/html-autoclosetag/ftplugin/html_autoclosetag.vim
 
 " Set to full screen on load
 " if has("gui_running")
