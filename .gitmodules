@@ -48,3 +48,9 @@
 [submodule "bundle/browser-refresh"]
 	path = bundle/browser-refresh
 	url = https://github.com/mkitt/browser-refresh.vim.git
+[submodule "bundle/jslint.vim"]
+	path = bundle/jslint.vim
+	url = https://github.com/hallettj/jslint.vim.git
+[submodule "bundle/json.vim"]
+	path = bundle/json.vim
+	url = https://github.com/vim-scripts/JSON.vim.git
