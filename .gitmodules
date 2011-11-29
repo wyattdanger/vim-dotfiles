@@ -56,3 +56,6 @@
 [submodule "bundle/rackup"]
 	path = bundle/rackup
 	url = https://github.com/vim-scripts/Rackup.git
+[submodule "vim-coffee-script"]
+	path = vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
