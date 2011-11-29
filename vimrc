@@ -87,7 +87,7 @@ if has("gui_running")
   set guioptions-=L  "remove right-hand scroll bar
   set showtabline=0
   set t_Co=256
-  set background=dark
+  set background=light
   " colorscheme molokai2
   colorscheme solarized
 
@@ -370,8 +370,13 @@ endfunction
 set foldtext=MyFoldText()
 
 
-" Mimics TextMate's Indentation                                                                                       
+" Mimics TextMate's Indentation 
 nmap <D-[> <<
 nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
+
+
+" Use Node.js for JavaScript interpretation
+let $JS_CMD='node'
+

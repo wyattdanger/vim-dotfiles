@@ -18,10 +18,6 @@
 	path = bundle/peepopen
 	url = https://github.com/shemerey/vim-peepopen.git
 	ignore = untracked
-[submodule "bundle/delimitmate"]
-	path = bundle/delimitmate
-	url = https://github.com/Raimondi/delimitMate.git
-	ignore = untracked
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = https://github.com/vim-scripts/matchit.zip.git
@@ -54,3 +50,9 @@
 [submodule "bundle/json.vim"]
 	path = bundle/json.vim
 	url = https://github.com/vim-scripts/JSON.vim.git
+[submodule "bundle/coffeescript"]
+	path = bundle/coffeescript
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/rackup"]
+	path = bundle/rackup
+	url = https://github.com/vim-scripts/Rackup.git
