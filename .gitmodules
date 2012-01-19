@@ -32,9 +32,6 @@
 [submodule "bundle/minibufexpl"]
 	path = bundle/minibufexpl
 	url = https://github.com/fholgado/minibufexpl.vim.git
-[submodule "bundle/conque"]
-	path = bundle/conque
-	url = https://github.com/vim-scripts/Conque-Shell.git
 [submodule "bundle/indent_guides"]
 	path = bundle/indent_guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
