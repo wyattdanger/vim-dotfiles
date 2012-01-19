@@ -380,3 +380,5 @@ vmap <D-]> >gv
 " Use Node.js for JavaScript interpretation
 let $JS_CMD='node'
 
+" Powerline
+let g:Powerline_symbols = 'fancy'
