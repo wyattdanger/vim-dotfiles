@@ -26,9 +26,6 @@
 	path = bundle/tcomment
 	url = https://github.com/vim-scripts/tComment.git
 	ignore = untracked
-[submodule "bundle/unimpaired"]
-	path = bundle/unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
 [submodule "bundle/minibufexpl"]
 	path = bundle/minibufexpl
 	url = https://github.com/fholgado/minibufexpl.vim.git
