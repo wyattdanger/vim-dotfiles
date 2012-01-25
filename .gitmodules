@@ -13,9 +13,6 @@
 [submodule "bundle/indent_guides"]
 	path = bundle/indent_guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "bundle/vim-repeat"]
-	path = bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat
 [submodule "bundle/jslint.vim"]
 	path = bundle/jslint.vim
 	url = https://github.com/hallettj/jslint.vim.git
