@@ -72,7 +72,6 @@ set visualbell t_vb=
 syntax enable "Enable syntax hl
 
 " Set Fonts
-set gfn=Inconsolata:h14
 set shell=/bin/bash
 
 " Highlight current line
@@ -87,7 +86,7 @@ if has("gui_running")
   set guioptions-=L  "remove right-hand scroll bar
   set showtabline=0
   set t_Co=256
-  set background=light
+  set background=dark
   " colorscheme molokai2
   colorscheme solarized
 

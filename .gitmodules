@@ -1,7 +1,3 @@
-[submodule "bundle/fugitive"]
-	path = bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
-	ignore = untracked
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -10,25 +6,10 @@
 	path = bundle/yankring
 	url = https://github.com/vim-scripts/YankRing.vim.git
 	ignore = untracked
-[submodule "bundle/surround"]
-	path = bundle/surround
-	url = https://github.com/tpope/vim-surround.git
-	ignore = untracked
 [submodule "bundle/peepopen"]
 	path = bundle/peepopen
 	url = https://github.com/shemerey/vim-peepopen.git
 	ignore = untracked
-[submodule "bundle/matchit"]
-	path = bundle/matchit
-	url = https://github.com/vim-scripts/matchit.zip.git
-	ignore = untracked
-[submodule "bundle/tcomment"]
-	path = bundle/tcomment
-	url = https://github.com/vim-scripts/tComment.git
-	ignore = untracked
-[submodule "bundle/minibufexpl"]
-	path = bundle/minibufexpl
-	url = https://github.com/fholgado/minibufexpl.vim.git
 [submodule "bundle/indent_guides"]
 	path = bundle/indent_guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
@@ -41,9 +22,6 @@
 [submodule "bundle/json.vim"]
 	path = bundle/json.vim
 	url = https://github.com/vim-scripts/JSON.vim.git
-[submodule "bundle/coffeescript"]
-	path = bundle/coffeescript
-	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "bundle/rackup"]
 	path = bundle/rackup
 	url = https://github.com/vim-scripts/Rackup.git

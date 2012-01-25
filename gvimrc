@@ -163,3 +163,6 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ 
 
 "minibuffexplorer flag
 let g:miniBufExplCheckDupeBufs = 0
+
+set gfn=Menlo\ for\ Powerline:h12
+set linespace=2
