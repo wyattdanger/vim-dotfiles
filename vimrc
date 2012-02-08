@@ -1,18 +1,47 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-rails.git'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'wyattdanger/vim-colors-solarized'
+
+" vim-scripts repos
+" Bundle 'L9'
+" non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+" ...
+
+filetype plugin indent on     " required! 
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+
+
+
+
+" Customizations
 "
 " Sets how many lines of history VIM has to remember
 set history=300
 set ttyfast
 set hidden
-
-" Turn off Vi compatibility
-set nocompatible
-
-" Enable filetype plugin
-filetype plugin on
-filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -127,62 +156,14 @@ autocmd FileType html set formatoptions+=tl
 autocmd FileType html,css set noexpandtab tabstop=2
 
 set lbr
-
-" DelimitMate stuff
-let delimitMate_expand_space = 1
-let delimitMate_expand_cr = 1
-
 set autoindent "Auto indent
 set wrap linebreak nolist
-" set formatoptions=qrn1
-
-" Really useful!
-"  In visual mode when you press * or # to search for the current selection
-vnoremap <silent> * :call VisualSearch('f')<CR>
-vnoremap <silent> # :call VisualSearch('b')<CR>
-
-" When you press gv you vimgrep after the selected text
-vnoremap <silent> gv :call VisualSearch('gv')<CR>
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
-
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction 
-
-" From an idea by Michael Naumann
-function! VisualSearch(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
-
-" Map space to / (search) and c-space to ? (backgwards search)
-map <space> /
-map <c-space> ?
 
 " Smart way to move btw. windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-
-" Close all the buffers
-map <leader>ba :1,300 bd!<cr>
 
 " Switch buffers with L and H easily
 map L :bn<cr>
@@ -194,190 +175,3 @@ map <leader>te :tabedit
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 
-" When pressing <leader>cd switch to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>
-
-" Custom maps to set working directories quickly
-" At Work
-map <leader>p1 :cd /Applications/XAMPP/htdocs/<cr>
-" At Home
-map <leader>p3 :cd ~/Sites/ptonlinegit/<cr>
-map <leader>p4 :cd ~/Sites/ptdotcomgit/<cr>
-
-
-command! Bclose call <SID>BufcloseCloseIt()
-function! <SID>BufcloseCloseIt()
-   let l:currentBufNum = bufnr("%")
-   let l:alternateBufNum = bufnr("#")
-
-   if buflisted(l:alternateBufNum)
-     buffer #
-   else
-     bnext
-   endif
-
-   if bufnr("%") == l:currentBufNum
-     new
-   endif
-
-   if buflisted(l:currentBufNum)
-     execute("bdelete! ".l:currentBufNum)
-   endif
-endfunction
-
-" Always hide the statusline
-set laststatus=2
-
-" Format the statusline
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
-
-function! CurDir()
-    let curdir = substitute(getcwd(), '/Users/fholgado/', "~/", "g")
-    return curdir
-endfunction
-
-"Remap VIM 0
-map 0 ^
-
-" Bubble single lines
-nmap K [e
-nmap J ]e
-" Bubble multiple lines
-vmap K [egv
-vmap J ]egv
-
-" Visually select the text that was last edited/pasted
-nmap gV `[v`]
-
-" MiniBufExplorer plugin
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplorerMoreThanOne = 0
-let g:miniBufExplUseSingleClick = 1
-let g:miniBufExplVSplit = 0
-let g:miniBufExplSplitBelow=0
-let g:miniBufExplorerDebugMode = 0
-let g:miniBufExplorerDebugLevel = 3
-
-autocmd FileType less set omnifunc=csscomplete#CompleteCSS
-
-"Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
-
-au FileType javascript setl nocindent
-au FileType javascript imap <c-a> alert();<esc>hi
-
-" PHP parser check (CTRL-G)
-autocmd FileType php noremap <C-G> :!/Applications/XAMPP/xamppfiles/bin/php -l %<CR>
-
-"Quickly open a buffer for scripbble
-map <leader>q :e ~/buffer<cr>
-
-" Set to full screen on load
-" if has("gui_running")
-"   set fuoptions=maxvert,maxhorz
-"   au GUIEnter * set fullscreen
-" endif
-
-" sane movement with wrap turned on
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-
-"don't move the cursor after pasting (by jumping to back start of previously changed text)
-noremap p p`[
-noremap P P`[
-
-
-" Insert an empty line above or below the cursor
-nnoremap <D-j> o<Esc>
-nnoremap <D-k> O<Esc>
-
-" Turn search highlighting off quickly
-nnoremap <leader><space> :noh<cr>
-
-" Make selecting inside an HTML tag less dumb
-nnoremap Vit vitVkoj
-nnoremap Vat vatV
-
-" Set LESS filetype automatically!
-au BufNewFile,BufRead *.less set filetype=less
-
-" Show Yankring contents
-nnoremap <silent> <leader>y :YRShow<cr>
-
-let php_htmlInStrings = 1  "for HTML syntax highlighting inside strings
-
-" Adding a Next verb to Vim commands 
-" SOURCE: http://forrst.com/posts/Adding_a_Next_Adjective_to_Vim_Version_2-C4P
-" Shortcut for square brackets "
-onoremap id i[
-onoremap ad a[
-
-" Next () "
-onoremap <silent> inb :<C-U>normal! f(vib<cr>
-onoremap <silent> anb :<C-U>normal! f(vab<cr>
-onoremap <silent> in( :<C-U>normal! f(vi(<cr>
-onoremap <silent> an( :<C-U>normal! f(va(<cr>
-
-" Next {} "
-onoremap <silent> inB :<C-U>normal! f{viB<cr>
-onoremap <silent> anB :<C-U>normal! f{vaB<cr>
-onoremap <silent> in{ :<C-U>normal! f{vi{<cr>
-onoremap <silent> an{ :<C-U>normal! f{va{<cr>
-
-" Next [] "
-onoremap <silent> ind :<C-U>normal! f[vi[<cr>
-onoremap <silent> and :<C-U>normal! f[va[<cr>
-onoremap <silent> in[ :<C-U>normal! f[vi[<cr>
-onoremap <silent> an[ :<C-U>normal! f[va[<cr>
-
-" Next <> "
-onoremap <silent> in< :<C-U>normal! f<vi<<cr>
-onoremap <silent> an< :<C-U>normal! f<va<<cr>
-
-" Next '' "
-onoremap <silent> in' :<C-U>normal! f'vi'<cr>
-onoremap <silent> an' :<C-U>normal! f'va'<cr>
-
-" Next "" "
-onoremap <silent> in" :<C-U>normal! f"vi"<cr>
-onoremap <silent> an" :<C-U>normal! f"va"<cr>
-
-" Rainbows!
-nmap <leader>R :RainbowParenthesesToggle<CR>
-
-" NERDTree configuration
-let NERDTreeIgnore=['\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
-
-function! MyFoldText()
-    let line = getline(v:foldstart)
-
-    let nucolwidth = &fdc + &number * &numberwidth
-    let windowwidth = winwidth(0) - nucolwidth - 3
-    let foldedlinecount = v:foldend - v:foldstart
-
-    " expand tabs into spaces "
-    let onetab = strpart('          ', 0, &tabstop)
-    let line = substitute(line, '\t', onetab, 'g')
-
-    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
-    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
-endfunction
-set foldtext=MyFoldText()
-
-
-" Mimics TextMate's Indentation 
-nmap <D-[> <<
-nmap <D-]> >>
-vmap <D-[> <gv
-vmap <D-]> >gv
-
-
-" Use Node.js for JavaScript interpretation
-let $JS_CMD='node'
-
-" Powerline
-let g:Powerline_symbols = 'fancy'
