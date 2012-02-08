@@ -13,10 +13,12 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
+Bundle 'shemerey/vim-peepopen'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-rails.git'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'wyattdanger/vim-colors-solarized'
+Bundle 'kchmck/vim-coffee-script'
 
 " vim-scripts repos
 " Bundle 'L9'
