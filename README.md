@@ -1,3 +1,4 @@
-#My Vim dotfiles
-Here you will find my collection of Vim configuration files. I am using Pathogen to keep things tidy. 
-
+## Setup
+- Symlink vimrc and gvimrc to `~/.vimrc` and `~/.gvimrc`, respectively
+- Install vundle `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
+- Open vim and run `:BundleInstall`
