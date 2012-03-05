@@ -18,6 +18,9 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'wyattdanger/vim-colors-solarized'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-scripts/JavaScript-syntax'
+Bundle 'nono/jquery.vim'
+Bundle 'wavded/vim-stylus'
 
 filetype plugin indent on     " required! 
 
