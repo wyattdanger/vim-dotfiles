@@ -12,8 +12,8 @@ Bundle 'gmarik/vundle'
 "
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
-Bundle 'shemerey/vim-peepopen'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-rails.git'
 Bundle 'wyattdanger/vim-colors-solarized'
 Bundle 'kchmck/vim-coffee-script'
@@ -21,6 +21,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-scripts/JavaScript-syntax'
 Bundle 'nono/jquery.vim'
 Bundle 'wavded/vim-stylus'
+Bundle 'tpope/vim-rvm'
+Bundle 'mattn/zencoding-vim'
 
 filetype plugin indent on     " required! 
 
