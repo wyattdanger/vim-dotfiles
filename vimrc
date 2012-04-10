@@ -53,7 +53,8 @@ cmap w!! %!sudo tee > /dev/null %
 map <leader>e :e! ~/.vim/vimrc<cr>
 
 " When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vim/vimrc
+autocmd! bufwritepost .vimrc source ~/.vimrc
+autocmd! bufwritepost .vimrc call Pl#Load()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
