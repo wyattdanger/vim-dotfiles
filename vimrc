@@ -315,3 +315,9 @@ if has("statusline") && !&cp
    set laststatus=2 "always show status bar
 endif
 
+"""""""""""""""""""""""
+" Misc Key Maps
+""""""""""""""""""""""
+
+" Insert hash rocket with ctrl l
+imap <c-l> <space>=><space>
