@@ -321,3 +321,6 @@ endif
 
 " Insert hash rocket with ctrl l
 imap <c-l> <space>=><space>
+
+" clear hlsearch with return
+imap <CR> :nohlsearch<cr>
