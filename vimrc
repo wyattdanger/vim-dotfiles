@@ -110,13 +110,13 @@ if has("gui_running")
   set guioptions-=L  "remove right-hand scroll bar
   set showtabline=0
   set t_Co=256
-  set background=dark
+  set background=light
   colorscheme solarized
 
   set nu
 else
   colorscheme zellner
-  set background=dark
+  set background=light
 
   set nonu
 endif
