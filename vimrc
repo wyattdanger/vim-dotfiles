@@ -59,7 +59,7 @@ autocmd! bufwritepost vimrc source ~/.vim/vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 7 lines to the curors - when moving vertical..
+" Set 7 lines to the cursor - when moving vertical..
 set so=7
 
 set wildmenu "Turn on WiLd menu
@@ -219,7 +219,7 @@ cnoremap <C-N> <Down>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map space to / (search) and c-space to ? (backgwards search)
+" Map space to / (search) and c-space to ? (backwards search)
 map <space> /
 map <c-space> ?
 map <silent> <leader><cr> :noh<cr>
@@ -236,7 +236,7 @@ map <leader>bd :Bclose<cr>
 " Close all the buffers
 map <leader>ba :1,300 bd!<cr>
 
-" Use the arrows to something usefull
+" Use the arrows to something useful
 map <right> :bn<cr>
 map <left> :bp<cr>
 
@@ -266,7 +266,7 @@ inoremap $e ""<esc>i
 inoremap $t <><esc>i
 
 
-"Move a line of text using Comamnd+[jk] on mac
+"Move a line of text using Command+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
