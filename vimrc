@@ -25,6 +25,7 @@ Bundle 'tpope/vim-rvm'
 Bundle 'mattn/zencoding-vim'
 Bundle 'vim-scripts/jade.vim'
 Bundle 'wavded/vim-stylus'
+Bundle 'wookiehangover/jshint.vim'
 
 filetype plugin indent on     " required! 
 
@@ -323,4 +324,5 @@ endif
 
 " Insert hash rocket with ctrl l
 imap <c-l> <space>=><space>
+
 
