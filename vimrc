@@ -23,6 +23,8 @@ Bundle 'nono/jquery.vim'
 Bundle 'wavded/vim-stylus'
 Bundle 'tpope/vim-rvm'
 Bundle 'mattn/zencoding-vim'
+Bundle 'vim-scripts/jade.vim'
+Bundle 'wavded/vim-stylus'
 
 filetype plugin indent on     " required! 
 
