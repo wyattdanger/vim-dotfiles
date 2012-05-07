@@ -26,6 +26,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'vim-scripts/jade.vim'
 Bundle 'wavded/vim-stylus'
 Bundle 'wookiehangover/jshint.vim'
+Bundle 'vim-scripts/Enhanced-Javascript-syntax'
 
 filetype plugin indent on     " required! 
 
@@ -324,5 +325,12 @@ endif
 
 " Insert hash rocket with ctrl l
 imap <c-l> <space>=><space>
+
+
+" JavaScript (tab width 4 chr, wrap at 79th)
+autocmd FileType javascript set sw=4
+autocmd FileType javascript set ts=4
+autocmd FileType javascript set sts=4
+autocmd FileType javascript set textwidth=79
 
 
