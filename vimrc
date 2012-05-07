@@ -60,6 +60,8 @@ map <leader>e :e! ~/.vim/vimrc<cr>
 autocmd! bufwritepost .vimrc source ~/.vimrc
 autocmd! bufwritepost .vimrc call Pl#Load()
 
+" Disable folding
+set nofoldenable
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
