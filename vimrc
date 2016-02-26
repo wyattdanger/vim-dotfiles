@@ -1,12 +1,11 @@
-" Begin Vundle
+set nocompatible               
 
-set nocompatible               " be iMproved
-filetype off                   " required!
+" Begin Vundle
+filetype off 
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
+call vundle#begin()
+Bundle 'VundleVim/Vundle.vim'
 
 " My Bundles here:
 "
@@ -23,7 +22,9 @@ Bundle 'wincent/terminus'
 Bundle 'scrooloose/syntastic'
 Bundle 'mxw/vim-jsx'
 
-filetype plugin indent on     " required! 
+" All of your Plugins must be added before the following line
+call vundle#end()            
+filetype plugin indent on   
 
 " End Vundle
 
@@ -356,4 +357,3 @@ let g:jsx_pragma_required = 0
 
 " Relative line numbers
 set rnu
-
