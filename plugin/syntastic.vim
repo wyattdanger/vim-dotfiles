@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 " Always add any detected errors into the location list
 let g:syntastic_always_populate_loc_list = 1
 
@@ -14,18 +16,16 @@ let g:syntastic_loc_list_height = 5
 " Don't run checkers when saving and quitting--only on saving
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_error_symbol         = '×'
-" There are better characters, but Hackpad won't show them
+let g:syntastic_error_symbol         = '✖'
 let g:syntastic_warning_symbol       = '⚠'
 let g:syntastic_style_error_symbol   = '⚠'
 let g:syntastic_style_warning_symbol = '⚠'
 
+let g:syntastic_haml_checkers          = ['haml_lint']
 let g:syntastic_javascript_checkers    = ['eslint']
+let s:eslint_path                      = system('PATH=$(npm bin):$PATH && which eslint')
+let g:syntastic_javascript_eslint_exec = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 let g:syntastic_json_checkers          = ['jsonlint']
 let g:syntastic_ruby_checkers          = ['rubocop']
 let g:syntastic_scss_checkers          = ['scss_lint']
 let g:syntastic_vim_checkers           = ['vint']
-let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-let b:syntastic_javascript_eslint_exec = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-
-
