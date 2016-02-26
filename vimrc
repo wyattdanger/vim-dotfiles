@@ -12,21 +12,16 @@ Bundle 'gmarik/vundle'
 "
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-rails.git'
 Bundle 'wyattdanger/vim-colors-solarized'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'vim-scripts/JavaScript-syntax'
-Bundle 'nono/jquery.vim'
-Bundle 'wavded/vim-stylus'
+Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-rvm'
-Bundle 'mattn/zencoding-vim'
-Bundle 'vim-scripts/jade.vim'
-Bundle 'wavded/vim-stylus'
-Bundle 'wookiehangover/jshint.vim'
-Bundle 'vim-scripts/Enhanced-Javascript-syntax'
+Bundle 'juvenn/mustache.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'wincent/terminus'
+Bundle 'scrooloose/syntastic'
+Bundle 'mxw/vim-jsx'
 
 filetype plugin indent on     " required! 
 
@@ -84,6 +79,9 @@ set whichwrap+=<,>,h,l
 set ignorecase "Ignore case when searching
 set smartcase
 
+set wildignore+=.git
+set wildignore+=*node_modules*
+
 set hlsearch "Highlight search things
 
 set incsearch "Make search act like search in modern browsers
@@ -107,6 +105,7 @@ set shell=/bin/zsh
 
 " Highlight current line
 :set cursorline
+
 
 if has("gui_running")
   set guioptions-=T
@@ -317,9 +316,7 @@ if has("gui_running")
   endif
 endif
 
-if has("statusline") && !&cp
-   set laststatus=2 "always show status bar
-endif
+set laststatus=2 "always show status bar
 
 """""""""""""""""""""""
 " Misc Key Maps
@@ -330,9 +327,33 @@ imap <c-l> <space>=><space>
 
 
 " JavaScript (tab width 4 chr, wrap at 79th)
-autocmd FileType javascript set sw=4
-autocmd FileType javascript set ts=4
-autocmd FileType javascript set sts=4
-autocmd FileType javascript set textwidth=79
+autocmd FileType javascript set sw=2
+autocmd FileType javascript set ts=2
+autocmd FileType javascript set sts=2
+autocmd FileType javascript set textwidth=80
+let javaScript_fold=1
+hi Folded ctermfg=12 ctermbg=8
 
+let g:Powerline_symbols = 'fancy'
+
+
+let g:ctrlp_lazy_update = 100
+" Only refreshes the results every 100ms so 
+" if you type fast searches don't pile up
+
+let g:ctrlp_lazy_update = 100 "Only refreshes the results every 100ms so if you type fast searches don't pile up
+
+let g:ctrlp_user_command = 'find %s -type f | egrep -iv "(\.(eot|gif|gz|ico|jpg|jpeg|otf|png|psd|pyc|svg|ttf|woff|zip)$)|(/\.)|((^|\/)tmp\/)"' 
+" Quicker indexing
+
+let g:html_indent_tags = '\|article\|aside\|audio\|bdi\|canvas\|command\|datalist\|details\|figcaption\|figure\|footer\|header\|hgroup\|mark\|meter\|nav\|output\|progress\|rp\|rt\|ruby\|section\|summary\|time\|video'
+
+set foldmethod=manual
+let g:fugitive_github_domains = ['github.com', 'git.musta.ch']
+
+let g:jsx_ext_required = 0
+let g:jsx_pragma_required = 0
+
+" Relative line numbers
+set rnu
 
