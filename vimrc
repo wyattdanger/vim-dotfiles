@@ -5,22 +5,23 @@ filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
-Bundle 'VundleVim/Vundle.vim'
+"Bundle 'VundleVim/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
 "
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'wyattdanger/vim-colors-solarized'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'mileszs/ack.vim'
-Bundle 'tpope/vim-rvm'
-Bundle 'juvenn/mustache.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'wincent/terminus'
-Bundle 'scrooloose/syntastic'
-Bundle 'mxw/vim-jsx'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'wyattdanger/vim-colors-solarized'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-rvm'
+Plugin 'juvenn/mustache.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'wincent/terminus'
+Plugin 'scrooloose/syntastic'
+Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            
